@@ -200,7 +200,7 @@ const hotelsList = [
 ]
 
 window.onload = function runOnLoad() {
-    
+    console.log('this is sampleinfo')
     localStorage.setItem('hotelList', JSON.stringify(hotelsList))
     console.log(JSON.parse(localStorage.getItem('hotelList')))
 }
