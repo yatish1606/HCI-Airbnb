@@ -60,7 +60,7 @@ window.onload = function runOnLoad() {
     $languageDropdownArrow.src = "images/icons/down_white.png"
     $menu.classList.add("home-searchbar-menu-visible")
     $searchBar.classList.add("home-searchbar-inside");
-
+    window.scrollTo(0,0)
     loadLocations()
 }
 
