@@ -60,7 +60,7 @@ html, body {
     box-sizing: inherit;
     display: flex;
     flex-direction: column;
-    background-image:linear-gradient(to bottom right, #0000004a 50%, #00000000), url("../images/dubai.jpg");
+    background-image:linear-gradient(to bottom right, #0000004a 50%, #00000000), url("../images/dubai.png");
     background-size: cover;
     background-color:#F1F2F8
     
