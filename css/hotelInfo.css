@@ -591,12 +591,6 @@ html, body {
     width: 65%;
     height: 100%;
 }
-.hotel-content-right {
-    width: 35%;
-    height: 100px;
-    background-color:gold;
-    margin-top: 10px;
-}
 
 .overview-box {
     width: calc(100% - 20px);
@@ -1331,8 +1325,8 @@ progress[value]::-webkit-progress-value {
 }
 
 .more-right h4 {
-    font-family: 'Nunito Sans';
-    font-weight: 700;
+    font-family: 'Montserrat';
+    font-weight: 600;
     color: #484848;
     font-size: 17px;
     margin: 0;
@@ -1455,4 +1449,134 @@ progress[value]::-webkit-progress-value {
 .arrow:hover {
     color: #FF5A5F;
     transition: 0.3s ease-in
+}
+
+.suggestion-hotel-item {
+    width: 100%;
+    height: 110px;
+    background-color: white;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hotel-content-others-list {
+    background-color: transparent;
+}
+
+.suggestion-hotel-item-left {
+    width: 30%;
+    display: block;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.suggestion-hotel-item-left  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.suggestion-hotel-info {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.suggestion-hotel-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #2a2b2b;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.suggestion-hotel-info span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.suggestion-hotel-info p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    color: #434343;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.hotel-content-right {
+    width: 35%;
+    background-color:white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.suggestion-hotel-info-amenities {
+    display: block;
+    width: 70%;
+}
+
+.suggestion-amenity {
+    padding: 3px 7px;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #f6f6f6;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: #434343;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.suggestion-hotel-info-price {
+    width: 30%;
+    height: 80px;
+    background-color: transparent;
+    bottom: 0;
+    right: 0;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.best-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #00a3c8;
+    padding: 3px 7px;
+    border-radius: 15px;
+}
+
+.best-price-price {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 17px;
+    color: #2a2b2b;
+    font-weight: bold;
+}
+.best-price-name {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    color: #434343;
+    font-weight: 500;
+}
+
+.other-properties {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #2a2b2b;
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 0;
 }

@@ -7,6 +7,7 @@ const $more = document.querySelector('.more')
 const $hotelBar = document.querySelector('.hotel-bar')
 const $hotelContentRight = document.querySelector('.hotel-content-right')
 var acc = document.getElementsByClassName("accordion");
+const $otherHotelsList = document.querySelector('.hotel-content-others-list')
 
 
 
@@ -72,6 +73,36 @@ window.onload = function runOnLoad() {
         $overview.style.cssText = inactiveStyle
         window.scrollTo(0,2800)
     })
+
+    suggestionHotels.map(hotel => {
+        console.log($otherHotelsList)
+        const content = `
+            <div class="suggestion-hotel-item">
+                <div class="suggestion-hotel-item-left">
+                    <img src="${hotel.image}"/>
+                </div>
+                <div class="suggestion-hotel-info">
+                    <h3>${hotel.name}</h3>
+                    <span>
+                        <img src="../images/icons/star.png" style="width:13px; height:13px"/>
+                        <p>${hotel.rating}</p>
+                    </span>
+                    <div style="display:flex; flex-direction:row;">
+                        <div class="suggestion-hotel-info-amenities">
+                            ${hotel.features.map(f => `<h6 class="suggestion-amenity">${f}</h6>`).join('')}
+                        </div>
+                        <div class="suggestion-hotel-info-price">
+                            <div class="best-price">Best price</div>
+                            <div class="best-price-price">&#8377; ${hotel.prices[0].price}</div>
+                            <div class="best-price-name">${hotel.prices[0].name}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+
+        $otherHotelsList.innerHTML += content
+    })
 }
 
 const options = [$overview,$location,$reviews,$faq,$more]
@@ -86,6 +117,9 @@ window.addEventListener('scroll', event => {
     if(this.scrollY > window.innerHeight - 90){
         $hotelBar.style.cssText = "position: fixed;top:0px; left:0;margin-top:0;padding-top:50px;padding-right:15px"
         $hotelContentRight.style.cssText = "position: fixed;top:100px; right:10%; width:28% "
+        if(this.scrollY > 2800) {
+            $hotelContentRight.style.cssText = "display: none;background-color:green"
+        }
     } else {
         $hotelBar.style.cssText = "position:none"
         $hotelContentRight.style.cssText = "position: none "

@@ -148,7 +148,8 @@ const hotelsList = [
         reviewsNumber : 2435,
         features : [
             'Popular',
-            "Breakfast included"
+            "Breakfast included",
+            'Casino'
         ],
         amenities : [
             {
