@@ -27,8 +27,9 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     max-width: 100%;
     background-color: #F1F2F8;
+    outline: none;
 }
-
+button:focus {outline:0;}
 .iframe-footer {
     width: 100%;
     height: 540px;
@@ -80,7 +81,7 @@ html, body {
     color: #fff;
     text-align: center;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 60px;
     border-bottom: 1.7px solid #fff;
     border-bottom-left-radius:2px;
     border-bottom-right-radius:2px;
@@ -149,7 +150,7 @@ html, body {
     margin: 0 auto;
     margin-top: 70px;
     /* height: 200px; */
-    background-color: #2a2b2bca;
+    background-color: #191919da;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -347,6 +348,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 0 15px;
+    cursor: pointer;
 }
 .search-button img {
     width:18px;
@@ -710,6 +712,7 @@ html, body {
     background-color: #FF5A5F;
     border: none;
     transition: 0.3s;
+    cursor: pointer;
 }
 .book-button a {
     text-decoration: none;
@@ -813,7 +816,7 @@ html, body {
     width: 4px;
     height: 8px;
     border: solid white;
-    border-width: 0 1.5px 1.5px 0;
+    border-width: 0 2px 2px 0;
     border-radius: 0.1px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -863,6 +866,7 @@ html, body {
     border:none;
     transition: 0.3s;
     margin-left: 10px;
+    cursor: pointer;
 }
 .price-filter button:hover {
     background-color: #E41D5A;

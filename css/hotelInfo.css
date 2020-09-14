@@ -11,6 +11,7 @@
     0% {opacity: 1;}
     100% {opacity: 0;}
 }
+button:focus {outline:0;}
 
 .fadeIn{
     animation: fadeIn ease 1s;
@@ -439,7 +440,7 @@ html, body {
 
 .book-button {
     width: calc(40% - 20px);
-    
+    cursor: pointer;
     height: 40px;
     border-radius: 40px;
     background-color: #FF5A5F;
@@ -460,7 +461,7 @@ html, body {
 .main-image {
     width: 80%;
     height: 100%;
-    background:linear-gradient(to right top, #000000aa 15%, #00000000 25%) ,url('../images/sheraton_grand.jpg');
+    
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -1460,6 +1461,7 @@ progress[value]::-webkit-progress-value {
     flex-direction: row;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .hotel-content-others-list {

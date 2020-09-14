@@ -8,12 +8,23 @@ const $hotelBar = document.querySelector('.hotel-bar')
 const $hotelContentRight = document.querySelector('.hotel-content-right')
 var acc = document.getElementsByClassName("accordion");
 const $otherHotelsList = document.querySelector('.hotel-content-others-list')
+const $hotelName = document.querySelector('.hotel-name')
+const $hotelRatingValue = document.querySelector('.hotel-rating-value')
+const $numberOfReviews = document.querySelector('.noofreviews')
+const $prices = document.querySelector('.prices')
+const $finalPrice = document.querySelector('.final-price')
+const $mainImage = document.querySelector('.main-image')
 
 
 
 const activeStyle = "color: #FF5A5F;border-bottom: 4px solid #FF5A5F;transition: 0.3s;"
 const inactiveStyle = "color: #2a2b2b;border-bottom: 4px solid transparent;transition: 0.3s;"
 
+const bookHotel = function(index) {
+    localStorage.setItem('hotelData', JSON.stringify(JSON.parse(localStorage.getItem('hotelList'))[index]))
+    console.log(JSON.parse(localStorage.getItem('hotelData')))
+    location.href="hotelInfo.html"
+}
 
 window.onload = function runOnLoad() {
 
@@ -25,7 +36,7 @@ window.onload = function runOnLoad() {
     const allHotelsInfo = JSON.parse(localStorage.getItem('hotelList'))
     console.log(allHotelsInfo)
     
-    const suggestionHotels = allHotelsInfo.filter(hotel => hotel.name !== 'Sheraton Grand Dubai')
+    const suggestionHotels = allHotelsInfo.filter(hotel => hotel.name !== hotelInfo.name)
     console.log(suggestionHotels)
 
     $overview.addEventListener('click', function () {
@@ -77,7 +88,7 @@ window.onload = function runOnLoad() {
     suggestionHotels.map(hotel => {
         console.log($otherHotelsList)
         const content = `
-            <div class="suggestion-hotel-item">
+            <div class="suggestion-hotel-item" onclick="bookHotel(${hotel.id})">
                 <div class="suggestion-hotel-item-left">
                     <img src="${hotel.image}"/>
                 </div>
@@ -103,6 +114,37 @@ window.onload = function runOnLoad() {
 
         $otherHotelsList.innerHTML += content
     })
+
+    $hotelName.innerHTML = hotelInfo.name
+    $hotelRatingValue.innerHTML = hotelInfo.rating
+    $numberOfReviews.innerHTML = hotelInfo.reviewsNumber
+
+    hotelInfo.prices.map(price => {
+        const priceContent = `
+        <div class="price-box">
+            <p>${price.name}</p>
+            <h3>&#8377; ${price.price}</h3>
+        </div>
+        <div class="vertical-separator" style="margin: 0 5px; height: 40px; vertical-align: middle;"></div>
+        `
+        $prices.innerHTML += priceContent
+    })
+    $prices.removeChild($prices.lastChild.previousSibling)
+
+    $finalPrice.innerHTML = `
+    <div class="final-price-left">
+        <h4>${hotelInfo.prices[0].name}</h4>
+        <h1>&#8377; ${hotelInfo.prices[0].price}</h1>
+        <h3>a night</h3>
+        <p>taxes and fees not included</p>
+    </div>
+    <button class="book-button">Book</button>
+    `
+    
+    $mainImage.style.background = `url('../images/${hotelInfo.image}')  no-repeat,` + 'linear-gradient(to right top, #000000aa 15%, #00000000 25%)' + 'no-repeat'
+    $mainImage.style.backgroundSize = 'cover'
+    // ,  + "linear-gradient(to right top, #000000aa 15%, #00000000 25%) "
+    
 }
 
 const options = [$overview,$location,$reviews,$faq,$more]

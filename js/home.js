@@ -21,9 +21,9 @@ const locations = [
         image :'images/new_york.jpg'
     },
     {
-        name : 'Bali',
-        country : 'Thailand',
-        image :'images/bali.jpg'
+        name : 'Dubai',
+        country : 'United Arab Emirates',
+        image :'images/dubai.png'
     },
     {
         name : 'Agra',
@@ -249,7 +249,7 @@ const loadLocations = function() {
             <div class="card-bottom">
                 <span><h4>${item.name} ,</h4><p>${item.country}</p></span>
                 <div class="get-hotels">
-                    <h5><a href="/">Find Hotels</a></h5>
+                    <h5><a href="components/listOfHotels.html" target="_top">Find Hotels</a></h5>
                     <img src="images/icons/down_salmon.png" class="get-hotels-img"/>
                 </div>
             </div>

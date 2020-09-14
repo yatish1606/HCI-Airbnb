@@ -84,16 +84,31 @@ select {
     font-size: 15px;
     margin-top: 10px;
     line-height: 20px;
-    background-color: transparent
+    background-color: transparent;
+    color: #2a2b2b;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 40px;
+    border: none;
+    font-weight: 700;
 }
 select.change {
     background: url("../images/icons/down_black.png") 96% / 25% no-repeat;   
 }
+button:focus {outline:0;}
 
-option  {
-    background: transparent
+select * {
+    background-color: transparent; 
+    color:#2a2b2b;
+    padding: 5px 10px;
+    margin: 10px;
 }
 
+option { 
+    background-color: transparent; 
+    color:#2a2b2b;
+    padding: 5px 10px;
+    margin: 10px;
+}
 .btn {
     width:120px;
     height: 50px;

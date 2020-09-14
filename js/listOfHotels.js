@@ -15,6 +15,7 @@ const getBG = function() {
 const bookHotel = function(index) {
     localStorage.setItem('hotelData', JSON.stringify(JSON.parse(localStorage.getItem('hotelList'))[index]))
     console.log(JSON.parse(localStorage.getItem('hotelData')))
+    location.href="hotelInfo.html"
 }
 
 const loadHotels = function() {
@@ -67,7 +68,7 @@ const loadHotels = function() {
                 <h1>&#8377; ${hotel.prices[0].price}</h1>
                 <h3>a night</h3>
                 <p>taxes and fees not included</p>
-                <button class="book-button" onclick="bookHotel(${index})">Book</button>
+                <button class="book-button" onclick="bookHotel(${index})"><a href="hotelInfo.html" target="_top">Book</a></button>
             </div>
             <div class="top-circle-cut"></div>
             <div class="bottom-circle-cut"></div>
@@ -77,7 +78,7 @@ const loadHotels = function() {
         </script>
         `
         
-        //<a href="hotelInfo.html" target="_top">
+        
         $hotelContainer.innerHTML += content
     })
     document.querySelector('.prices').removeChild(document.querySelector('.prices').lastChild.previousSibling)
