@@ -25,7 +25,7 @@ window.onload = function runOnLoad() {
     const allHotelsInfo = JSON.parse(localStorage.getItem('hotelList'))
     console.log(allHotelsInfo)
     
-    const suggestionHotels = allHotelsInfo.filter(hotel => hotel.name !== hotelInfo.name)
+    const suggestionHotels = allHotelsInfo.filter(hotel => hotel.name !== 'Sheraton Grand Dubai')
     console.log(suggestionHotels)
 
     $overview.addEventListener('click', function () {
