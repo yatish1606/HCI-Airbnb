@@ -67,7 +67,7 @@ const loadHotels = function() {
                 <h1>&#8377; ${hotel.prices[0].price}</h1>
                 <h3>a night</h3>
                 <p>taxes and fees not included</p>
-                <button class="book-button" onclick="bookHotel(${index})"><a href="hotelInfo.html" target="_top">Book</a></button>
+                <button class="book-button" ><a href="hotelInfo.html" target="_top">Book</a></button>
             </div>
             <div class="top-circle-cut"></div>
             <div class="bottom-circle-cut"></div>
@@ -76,7 +76,7 @@ const loadHotels = function() {
             
         </script>
         `
-            
+        //onclick="bookHotel(${index})"
         $hotelContainer.innerHTML += content
     })
     document.querySelector('.prices').removeChild(document.querySelector('.prices').lastChild.previousSibling)
