@@ -39,6 +39,38 @@ window.onload = function runOnLoad() {
     const suggestionHotels = allHotelsInfo.filter(hotel => hotel.name !== hotelInfo.name)
     console.log(suggestionHotels)
 
+    
+    $hotelName.innerHTML = hotelInfo.name
+    $hotelRatingValue.innerHTML = hotelInfo.rating
+    $numberOfReviews.innerHTML = hotelInfo.reviewsNumber
+
+    hotelInfo.prices.map(price => {
+        const priceContent = `
+        <div class="price-box">
+            <p>${price.name}</p>
+            <h3>&#8377; ${price.price}</h3>
+        </div>
+        <div class="vertical-separator" style="margin: 0 5px; height: 40px; vertical-align: middle;"></div>
+        `
+        $prices.innerHTML += priceContent
+    })
+    $prices.removeChild($prices.lastChild.previousSibling)
+
+    $finalPrice.innerHTML = `
+    <div class="final-price-left">
+        <h4>${hotelInfo.prices[0].name}</h4>
+        <h1>&#8377; ${hotelInfo.prices[0].price}</h1>
+        <h3>a night</h3>
+        <p>taxes and fees not included</p>
+    </div>
+    <button class="book-button">Book</button>
+    `
+    
+    $mainImage.style.background = `url('../images/${hotelInfo.image}')  no-repeat,` + 'linear-gradient(to right top, #000000aa 15%, #00000000 25%)' + 'no-repeat'
+    $mainImage.style.backgroundSize = 'cover'
+    // ,  + "linear-gradient(to right top, #000000aa 15%, #00000000 25%) "
+    
+
     $overview.addEventListener('click', function () {
         $overview.style.cssText = activeStyle
         $location.style.cssText = inactiveStyle
@@ -115,36 +147,6 @@ window.onload = function runOnLoad() {
         $otherHotelsList.innerHTML += content
     })
 
-    $hotelName.innerHTML = hotelInfo.name
-    $hotelRatingValue.innerHTML = hotelInfo.rating
-    $numberOfReviews.innerHTML = hotelInfo.reviewsNumber
-
-    hotelInfo.prices.map(price => {
-        const priceContent = `
-        <div class="price-box">
-            <p>${price.name}</p>
-            <h3>&#8377; ${price.price}</h3>
-        </div>
-        <div class="vertical-separator" style="margin: 0 5px; height: 40px; vertical-align: middle;"></div>
-        `
-        $prices.innerHTML += priceContent
-    })
-    $prices.removeChild($prices.lastChild.previousSibling)
-
-    $finalPrice.innerHTML = `
-    <div class="final-price-left">
-        <h4>${hotelInfo.prices[0].name}</h4>
-        <h1>&#8377; ${hotelInfo.prices[0].price}</h1>
-        <h3>a night</h3>
-        <p>taxes and fees not included</p>
-    </div>
-    <button class="book-button">Book</button>
-    `
-    
-    $mainImage.style.background = `url('../images/${hotelInfo.image}')  no-repeat,` + 'linear-gradient(to right top, #000000aa 15%, #00000000 25%)' + 'no-repeat'
-    $mainImage.style.backgroundSize = 'cover'
-    // ,  + "linear-gradient(to right top, #000000aa 15%, #00000000 25%) "
-    
 }
 
 const options = [$overview,$location,$reviews,$faq,$more]
