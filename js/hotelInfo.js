@@ -14,8 +14,9 @@ const $numberOfReviews = document.querySelector('.noofreviews')
 const $prices = document.querySelector('.prices')
 const $finalPrice = document.querySelector('.final-price')
 const $mainImage = document.querySelector('.main-image')
+const $features = document.querySelector('.features')
 
-
+const colors = ['#1094C34a', '#0BB02E3a', '#ED8A0E4a', '#460EED2a', '#0E83ED3a', '#eee', '#EBB0054a', '#0AB88E3a', '#E117082a', '#B0D50B3a']
 
 const activeStyle = "color: #FF5A5F;border-bottom: 4px solid #FF5A5F;transition: 0.3s;"
 const inactiveStyle = "color: #2a2b2b;border-bottom: 4px solid transparent;transition: 0.3s;"
@@ -24,6 +25,10 @@ const bookHotel = function(index) {
     localStorage.setItem('hotelData', JSON.stringify(JSON.parse(localStorage.getItem('hotelList'))[index]))
     console.log(JSON.parse(localStorage.getItem('hotelData')))
     location.href="hotelInfo.html"
+}
+
+const getBG = function() {
+    return colors[Math.floor(Math.random() * colors.length)].toString()
 }
 
 window.onload = function runOnLoad() {
@@ -70,6 +75,12 @@ window.onload = function runOnLoad() {
     $mainImage.style.backgroundSize = 'cover'
     // ,  + "linear-gradient(to right top, #000000aa 15%, #00000000 25%) "
     
+    hotelInfo.features.map(item => {
+        const content = `
+        <div style="display:inline-block;"><p class="feature" style=" background-color:${getBG()};">${item}</p></div>
+        `
+        $features.innerHTML += content
+    })
 
     $overview.addEventListener('click', function () {
         $overview.style.cssText = activeStyle

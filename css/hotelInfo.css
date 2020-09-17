@@ -725,6 +725,8 @@ html, body {
     margin-top: 20px;
     /* grid-template-columns: repeat(auto-size, 1fr);
     grid-template-rows: repeat(4, 100px); */
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 .feature{
@@ -1308,7 +1310,7 @@ progress[value]::-webkit-progress-value {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .more-left {
@@ -1331,7 +1333,8 @@ progress[value]::-webkit-progress-value {
     color: #484848;
     font-size: 17px;
     margin: 0;
-    padding:0
+    padding:0;
+    margin-bottom: 7px;
 }
 
 .more-right p {

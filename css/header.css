@@ -74,12 +74,13 @@ html, body {
     z-index: 10000;
 }
 
-.home-logo-content {
+.home-logo-content a {
     margin-left: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content:center;
+    text-decoration: none;
 }
 
 .home-logo-content span {
@@ -197,7 +198,7 @@ select.change {
     color: #fff
 }
 .menu li:hover {
-    background-color: #ffffff17;
+    background-color: #ffffff2a;
     transition: 0.4s;
     color: #fff;
 }
@@ -210,8 +211,8 @@ select.change {
 }
 
 .language-select-div {
-    width: 65px;
-    height: 35px;
+    width: 45px;
+    height: 40px;
     border-radius: 25px;
     background: none;
     align-items: center;
@@ -219,7 +220,13 @@ select.change {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    padding-right: 20px;
+}
+
+.language-select-div:hover {
+    background-color: #ffffff2a;
+    transition: 0.2s ease-in-out;
 }
 
 .language-select {

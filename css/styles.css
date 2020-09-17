@@ -151,7 +151,7 @@ option {
     margin: 0;
     /* background-image: url("https://c4.wallpaperflare.com/wallpaper/976/320/894/nevada-north-america-fountains-of-bellagio-and-surrounding-hotels-view-from-the-balcony-of-the-cosmopolitan-hotel-in-las-vegas-beautiful-desktop-wallpaper-hd-2880%C3%971620-wallpaper-preview.jpg"); */
     width: 100%;
-    background-image:linear-gradient(to bottom right, #0000004a 50%, #00000000), url("../images/icons/wallpaper.jpg");
+    background-image:linear-gradient(to bottom right, #0000003a 70%, #00000000), linear-gradient(to top , #00000000 70%, #0000009a ), url("../images/icons/wallpaper.jpg");
     height: 95vh;
     color: blue;
     padding-top: 90px;
@@ -180,12 +180,13 @@ option {
     z-index: 10000;
 }
 
-.home-logo-content {
+.home-logo-content a {
     margin-left: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content:center;
+    text-decoration: none;
 }
 
 .home-logo-content span {
@@ -309,7 +310,7 @@ option {
     margin: 20px auto;
     margin-top: 90px;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 400;
     color: #fff;
     width: 80%;
@@ -356,14 +357,15 @@ option {
 
 .menu li {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
     font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .language-select-div {
-    width: 65px;
-    height: 35px;
+    width: 45px;
+    height: 40px;
     border-radius: 25px;
     background: none;
     align-items: center;
@@ -371,7 +373,13 @@ option {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    padding-right: 20px;
+}
+
+.language-select-div:hover {
+    background-color: #ffffff2a;
+    transition: 0.2s ease-in-out;
 }
 
 .language-select {
@@ -447,11 +455,12 @@ option {
     font-weight: 400;
     color: #93969D;
     border:none;
+    outline: none;
 }
 
 .searchbar-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 13.5px;
     font-weight: 600;
     color: #2a2b2b;
     margin: 0;
@@ -640,12 +649,16 @@ option {
     width:120px;
     height: 42px;
     font-size: 14px;
+    cursor: pointer;
 }
 .box-left button:hover {
     background-color:transparent;
     border: 2px solid #FF5A5F;
     transition: 0.3s;
-    color: #FF5A5F
+}
+
+.box-left button:hover a {
+    color: #FF5A5F;
 }
 
 .locations-list {
@@ -700,7 +713,8 @@ option {
     border-radius: 10px;
     overflow: hidden;
     margin: 10px 15px 10px 0px;
-    transition:0.3s
+    transition:0.3s;
+    cursor: pointer;
 }
 .card-body:hover {
     transform: scale(1.05);

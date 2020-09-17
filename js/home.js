@@ -7,6 +7,8 @@ const $languageSelectImage = document.getElementById('language-select-image')
 const $languageDropdownArrow = document.getElementById('language-select')
 const $locations = document.querySelector('.locations')
 const $exploreButton = document.querySelector('.explore-btn')
+const $preBookArrow = document.querySelector('.prebook-arrow')
+const $preBookButton = document.querySelector('.prebook-button')
 //const $languageSelect = document.getElementById('language-select')
 
 const locations = [
@@ -236,6 +238,9 @@ const hotelsList = [
 ]
 
 
+const goToList = () => {
+    window.location.href = "components/listOfHotels.html"
+}
 
 
 // <img src="${item.image}"  class="hotel-image" />
@@ -245,7 +250,7 @@ const loadLocations = function() {
     card.classList = 'card-body';
 
     const content = `
-        <div class="card-body" style="background-image:linear-gradient(to top, #000000ba 20%, #00000000 30%), url(${item.image}); background-size:cover">
+        <div class="card-body" style="background-image:linear-gradient(to top, #000000ba 20%, #00000000 30%), url(${item.image}); background-size:cover" onclick="goToList()">
             <div class="card-bottom">
                 <span><h4>${item.name} ,</h4><p>${item.country}</p></span>
                 <div class="get-hotels">
@@ -323,6 +328,14 @@ window.addEventListener('scroll', event => {
 })
 
 $exploreButton.addEventListener('click', () => {
-    window.scrollTo(0,1200)
+    window.scrollTo(0,600)
+})
+
+$preBookButton.addEventListener('mouseenter', event => {
+    console.log('enter')
+    $preBookArrow.src = "images/icons/down_salmon.png"
+})
+$preBookButton.addEventListener('mouseleave', event => {
+    $preBookArrow.src = "images/icons/down_white.png"
 })
 
