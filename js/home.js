@@ -9,6 +9,7 @@ const $locations = document.querySelector('.locations')
 const $exploreButton = document.querySelector('.explore-btn')
 const $preBookArrow = document.querySelector('.prebook-arrow')
 const $preBookButton = document.querySelector('.prebook-button')
+const $gototop = document.querySelector('.gototop')
 //const $languageSelect = document.getElementById('language-select')
 
 const locations = [
@@ -278,12 +279,20 @@ window.onload = function runOnLoad() {
     localStorage.setItem('hotelList', JSON.stringify(hotelsList))
     console.log(JSON.parse(localStorage.getItem('hotelList')))
     console.log('testing')
+    $gototop.style.display = "none"
+    $gototop.addEventListener('click', () => {
+        window.scroll({top:0, left:0, behavior:'smooth'})
+    })
 }
 
 
 window.addEventListener('scroll', event => {
 
-    
+    if(window.scrollY < window.innerHeight) {
+        $gototop.style.display = "none"
+    } else {
+        $gototop.style.display = "flex"
+    }
     
     if(this.scrollY > 0){
         $header.classList.add('white-bg')
