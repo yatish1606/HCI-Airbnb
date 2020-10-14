@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/listOfHotels.css"/>
+    </head>
+
+    <style>
+        label {
+            font-size: 18px;
+            color: #E41D5A;
+            margin: 10px 0;
+            width: 100%;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        input, textarea {
+            width: 80%;
+            margin-left: 10px;
+            height: 40px;
+            background-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #2a2b2b;
+            padding: 5px 0px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 2px solid #E41D5A;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #ababab;
+        }
+        .btn {
+            width:120px;
+            height: 50px;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #FF5A5F;
+            border: 2px solid #FF5A5F;
+            display: flex;
+            flex-direction: row;
+            font-family: 'Montserrat', sans-serif;
+            font-size : 15px;
+            text-transform: capitalize;
+            font-weight: 600;
+            border-radius: 40px;
+            color:#fff;
+            margin: 20px auto;
+            margin-top: 60px;
+            transition: 0.3s;
+            padding-left: 0px;
+            cursor: pointer;
+            margin-right: 20%;
+        }
+        .btn:hover {
+            background-color:#fff;
+            border: 3px solid #FF5A5F;
+            transition: 0.3s;
+            color: #FF5A5F;
+        }
+    </style>
+
+    
+    <body>
+        
+        <div class="main-container" style="background-image: none; background-color: #2a2b2b;">
+            
+            <iframe src="./header.html" class="iframe-header"></iframe>
+            <!-- <div class="main-content"> -->
+                <div style="height: 70vh; background-color: white;margin-top: 100px; width: 100%; display: inline;">
+                    <h4 style="position: absolute; color: #2a2b2b; font-size: 50px; margin: 30px auto; align-self: center; left: 40%;">Contact us</h4>
+                    <div style="width: 80%; border-radius: 10px; display: flex; flex-direction: row; position: absolute; top: 200px; left: 10%; ">
+                        <div style="width: 50%; height: 100%; display: flex; flex-direction: column; margin-top: 20px;">
+                            <label>Name</label>
+                            <input placeholder="Enter name"/>
+                            <label>Email</label>
+                            <input placeholder="Enter email"/>
+                            <label>Contact Number</label>
+                            <input placeholder="Enter valid mobile number"/>
+                        </div>
+                        <div style="width: 50%; height: 100%; display: flex; flex-direction: column; margin-top: 20px;">
+                            <label>Query</label>
+                            <textarea style="height: 160px;" placeholder="Be brief. Or dont be, either way we'll read it and get back to you!"></textarea>
+                            <button class="btn">Submit</button>
+                        </div>
+                    </div> 
+                </div>
+                
+            <!-- </div> -->
+
+        </div>
+        
+        <iframe src="./footer.html" class="iframe-footer" style="margin-top: 0;"></iframe>
+        
+    </body>
+</html>

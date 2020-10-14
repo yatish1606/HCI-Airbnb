@@ -152,6 +152,7 @@ option {
     /* background-image: url("https://c4.wallpaperflare.com/wallpaper/976/320/894/nevada-north-america-fountains-of-bellagio-and-surrounding-hotels-view-from-the-balcony-of-the-cosmopolitan-hotel-in-las-vegas-beautiful-desktop-wallpaper-hd-2880%C3%971620-wallpaper-preview.jpg"); */
     width: 100%;
     background-image:linear-gradient(to bottom right, #0000003a 70%, #00000000), linear-gradient(to top , #00000000 70%, #0000009a ), url("../images/icons/wallpaper.jpg");
+    
     height: 95vh;
     color: blue;
     padding-top: 90px;
@@ -285,6 +286,7 @@ option {
     background-color: none;
     padding-top : 100px;
     align-items: center;
+    backdrop-filter: saturate(1.1);
     /* display: block;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -320,6 +322,7 @@ option {
 
 .white-bg {
     background:white;
+    box-shadow: 0px 10px 15px #0000001a;
 }
 
 .no-bg {

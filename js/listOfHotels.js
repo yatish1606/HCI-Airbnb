@@ -1,5 +1,6 @@
 //const {hotelsList} = require('../sampleInfo')
 const $features = document.getElementsByClassName('feature')
+const $gototop = document.querySelector('.gototop')
 
 const colors = ['#1094C34a', '#0BB02E3a', '#ED8A0E4a', '#460EED2a', '#0E83ED3a', '#eee', '#EBB0054a', '#0AB88E3a', '#E117082a', '#B0D50B3a']
 let selectedHotel = null
@@ -87,6 +88,19 @@ const loadHotels = function() {
 window.onload = function runOnLoad() {
     console.log(JSON.parse(localStorage.getItem('hotelList')))
     loadHotels()
+    $gototop.style.display = "none"
+    $gototop.addEventListener('click', () => {
+        window.scroll({top:0, left:0, behavior:'smooth'})
+    })
+
+    window.addEventListener('scroll', () => {
+        
+        if(window.scrollY < window.innerHeight) {
+            $gototop.style.display = "none"
+        } else {
+            $gototop.style.display = "flex"
+        }
+    })
 }
 
 

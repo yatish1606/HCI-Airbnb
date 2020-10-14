@@ -10,7 +10,7 @@ const icons = [
     {
         icon : "../images/icons/youtube.png",
         action : "/",
-        name : 'Instagram',
+        name : 'Youtube',
         link : "https://www.youtube.com",
     },
     {

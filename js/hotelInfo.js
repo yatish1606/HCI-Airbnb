@@ -15,6 +15,7 @@ const $prices = document.querySelector('.prices')
 const $finalPrice = document.querySelector('.final-price')
 const $mainImage = document.querySelector('.main-image')
 const $features = document.querySelector('.features')
+const $gototop = document.querySelector('.gototop')
 
 const colors = ['#1094C34a', '#0BB02E3a', '#ED8A0E4a', '#460EED2a', '#0E83ED3a', '#eee', '#EBB0054a', '#0AB88E3a', '#E117082a', '#B0D50B3a']
 
@@ -34,6 +35,11 @@ const getBG = function() {
 window.onload = function runOnLoad() {
 
     setStyle($overview)
+    $gototop.style.display = "none"
+
+    $gototop.addEventListener('click', () => {
+        window.scroll({top:0, left:0, behavior:'smooth'})
+    })
 
     const hotelInfo = JSON.parse(localStorage.getItem('hotelData'))
     console.log(hotelInfo)
@@ -194,6 +200,13 @@ window.addEventListener('scroll', event => {
     if(this.scrollY > 2500){
         setStyle($more)
     }
+
+        
+        if(window.scrollY < window.innerHeight) {
+            $gototop.style.display = "none"
+        } else {
+            $gototop.style.display = "flex"
+        }
 })
 
 var i;
